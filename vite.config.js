@@ -8,6 +8,12 @@ export default defineConfig({
   server: { open: '/' },
   build: {
     outDir: resolve(process.cwd(), 'dist'),
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(appRoot, 'index.html'),
+        aiProcess: resolve(appRoot, 'ai-process.html')
+      }
+    }
   }
 });
