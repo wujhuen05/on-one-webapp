@@ -5,10 +5,9 @@ const appRoot = resolve(process.cwd(), 'stitch_campusflow_student_dashboard');
 
 export default defineConfig({
   root: appRoot,
-  server: { open: '/code.html' },
+  server: { open: '/' },
   build: {
     outDir: resolve(process.cwd(), 'dist'),
-    emptyOutDir: true,
-    rollupOptions: { input: resolve(appRoot, 'code.html') }
+    emptyOutDir: true
   }
 });
