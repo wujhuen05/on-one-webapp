@@ -1,0 +1,1067 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><title>온원 | ON-ONE</title><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#5516be", "on-error-container": "#93000a", "on-surface-variant": "#45464d", "on-primary-fixed-variant": "#3f465c", "secondary-fixed": "#d8e2ff", "surface-container-highest": "#d3e4fe", "outline": "#76777d", "primary-container": "#131b2e", "tertiary": "#000000", "surface": "#f8f9ff", "tertiary-container": "#23005c", "inverse-on-surface": "#eaf1ff", "surface-tint": "#565e74", "on-secondary-container": "#fefcff", "on-primary-container": "#7c839b", "on-primary-fixed": "#131b2e", "secondary": "#0058be", "surface-variant": "#d3e4fe", "surface-container-high": "#dce9ff", "secondary-fixed-dim": "#adc6ff", "on-secondary-fixed-variant": "#004395", "primary-fixed-dim": "#bec6e0", "on-secondary": "#ffffff", "surface-bright": "#f8f9ff", "background": "#f8f9ff", "on-background": "#0b1c30", "surface-container": "#e5eeff", "primary": "#000000", "tertiary-fixed": "#e9ddff", "error": "#ba1a1a", "on-tertiary-fixed": "#23005c", "on-primary": "#ffffff", "outline-variant": "#c6c6cd", "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "on-surface": "#0b1c30", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-container": "#9466ff", "secondary-container": "#2170e4", "inverse-primary": "#bec6e0", "tertiary-fixed-dim": "#d0bcff", "on-secondary-fixed": "#001a42", "inverse-surface": "#213145", "primary-fixed": "#dae2fd", "on-error": "#ffffff", "surface-container-low": "#eff4ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "0.75rem", "margin-desktop": "2rem", "margin": "1rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-xl": "2rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "gutter-desktop": "1.75rem" }, fontFamily: { "headline-md": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "label-sm": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.015em", fontWeight: "600" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.025em", fontWeight: "700" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }], "body-sm": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "400" }], "label-md": ["13px", { lineHeight: "16px", letterSpacing: "0.005em", fontWeight: "500" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }] } } } }</script><style>:root{--theme-color:#2563eb;--theme-soft:#eff6ff;--theme-hover:#dbeafe;--theme-canvas:#f5f8ff;--theme-panel:#fff;--theme-panel-soft:#edf3ff;--theme-border:#b9c9e4}@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+.setting-switch{position:relative;display:inline-flex;width:46px;height:26px;flex:none;align-items:center;border:1px solid #c6c6cd;border-radius:9999px;background:#e5eeff;padding:2px;transition:background-color .2s,border-color .2s;cursor:pointer}
+.setting-switch::after{content:"";width:20px;height:20px;border-radius:9999px;background:#fff;box-shadow:0 1px 3px #0002;transition:transform .2s}
+.setting-switch[aria-checked="true"]{background:var(--theme-color,#2563eb);border-color:var(--theme-color,#2563eb)}
+.setting-switch[aria-checked="true"]::after{transform:translateX(20px)}
+.setting-switch:focus-visible,.theme-choice:focus-visible{outline:2px solid var(--theme-color,#2563eb);outline-offset:2px}
+
+.theme-choice{display:flex;min-height:48px;align-items:center;justify-content:space-between;gap:12px;border:1px solid #c6c6cd66;border-radius:12px;background:var(--theme-panel,#fff);padding:9px 12px;color:#30343b;font-size:14px;font-weight:500;transition:background-color .15s,border-color .15s,color .15s;cursor:pointer}
+.theme-choice:hover{background:var(--theme-soft,#f4f4f5)}
+.theme-choice[aria-pressed="true"]{border-color:var(--theme-color);background:var(--theme-soft);color:var(--theme-color);box-shadow:inset 0 0 0 1px var(--theme-color)}
+.theme-action:focus-visible{outline:2px solid var(--theme-color);outline-offset:3px}
+
+.task-filter{min-height:38px;border:1px solid #c6c6cd66;border-radius:9999px;background:var(--theme-panel,#fff);padding:7px 14px;color:#45464d;font-size:13px;font-weight:600;transition:background-color .15s,color .15s,border-color .15s}
+.task-filter[aria-pressed="true"]{border-color:var(--theme-color);background:var(--theme-soft);color:var(--theme-color)}
+.calendar-nav{display:flex;height:36px;width:36px;align-items:center;justify-content:center;border-radius:9999px;color:var(--theme-color);transition:background-color .15s}
+.calendar-nav:hover{background:var(--theme-soft)}
+.calendar-day{position:relative;display:flex;min-width:0;height:46px;align-items:center;justify-content:center;border-radius:10px;color:#253144;font-size:13px;transition:color .15s}
+.calendar-day-number{position:relative;z-index:1;display:grid;width:34px;height:34px;place-items:center;border:1px solid transparent;border-radius:9999px;color:#253144!important;font-size:13px!important;line-height:1!important;opacity:1!important;visibility:visible!important;font-variant-numeric:tabular-nums;transition:background-color .15s,color .15s,box-shadow .15s}
+.calendar-day:hover:not(.calendar-day-selected) .calendar-day-number{background:var(--theme-soft)}
+.calendar-day-muted .calendar-day-number{color:#a4acb8!important}
+.calendar-day-today .calendar-day-number{border-color:var(--theme-color);font-weight:700}
+.calendar-day-selected .calendar-day-number{border-color:var(--theme-color);background-color:var(--theme-color);color:#fff!important;font-size:13px!important;line-height:1!important;opacity:1!important;visibility:visible!important;font-weight:700;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--theme-color)}
+.calendar-day-selected:hover .calendar-day-number{background-color:var(--theme-color);filter:brightness(.88)}
+.calendar-day-selected.calendar-day-muted .calendar-day-number{color:#fff!important}
+.calendar-day-selected.calendar-day-today .calendar-day-number{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--theme-color),0 0 0 6px rgba(23,32,43,.32)}
+.calendar-event-dot{position:absolute;bottom:0;left:50%;z-index:2;height:4px;width:4px;transform:translateX(-50%);border-radius:9999px;background:var(--theme-color)}
+.calendar-day-selected .calendar-event-dot{background:#fff}
+
+.theme-subtle-button{background:var(--theme-soft);color:var(--theme-color)}
+.daily-encouragement{max-width:48%;overflow:hidden;color:color-mix(in srgb,var(--theme-color) 38%,#687386);font-size:12px;line-height:1.4;text-align:right;text-overflow:ellipsis;white-space:nowrap}
+.daily-encouragement-short{display:none}
+@media(max-width:480px){.daily-encouragement{max-width:42%;font-size:11px}.daily-encouragement-full{display:none}.daily-encouragement-short{display:inline}}
+.theme-subtle-button:hover{background:var(--theme-hover)}
+.theme-subtle-button:focus-visible{outline:2px solid var(--theme-color);outline-offset:2px}
+.theme-preview{display:flex;gap:2px;flex:none}
+.theme-preview-dot{width:8px;height:8px;border-radius:9999px;border:1px solid #17202b1c}
+.category-swatch{position:relative;width:34px;height:34px;flex:none;border:2px solid rgba(15,23,42,.2);border-radius:9999px;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+.category-swatch:hover{transform:scale(1.08)}
+.category-swatch[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 2px var(--theme-color,#27272a),0 0 0 4px #fff}
+.category-swatch[aria-pressed="true"]::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:19px;font-weight:800;line-height:1;text-shadow:0 1px 3px #000,0 0 2px #000}
+.category-swatch:focus-visible,.theme-choice:focus-visible{outline:2px solid var(--theme-color,#27272a);outline-offset:3px}
+body[data-theme="default"]{--theme-color:#2563eb;--theme-soft:#eff6ff;--theme-hover:#dbeafe;--theme-canvas:#f5f8ff;--theme-panel:#fff;--theme-panel-soft:#edf3ff;--theme-border:#b9c9e4}
+body[data-theme="dopamine"]{--theme-color:#9b3f6b;--theme-soft:#fff0f6;--theme-hover:#ffe1ec;--theme-canvas:#fff8fb;--theme-panel:#fff;--theme-panel-soft:#fff0f6;--theme-border:#edbfd0}
+body[data-theme="vintage"]{--theme-color:#65452f;--theme-soft:#f1e8d8;--theme-hover:#e7dbc3;--theme-canvas:#f5f0e5;--theme-panel:#fffdf8;--theme-panel-soft:#eee7d8;--theme-border:#c8b89b}
+body[data-theme="low-contrast"]{--theme-color:#526b61;--theme-soft:#e8efeb;--theme-hover:#dce7e1;--theme-canvas:#f3f5f2;--theme-panel:#fcfdfb;--theme-panel-soft:#e9eeeb;--theme-border:#c3cec7}
+body[data-theme="sunset"]{--theme-color:#984554;--theme-soft:#fae9e8;--theme-hover:#f3d9d8;--theme-canvas:#fbf3f1;--theme-panel:#fffdfc;--theme-panel-soft:#f4e8e7;--theme-border:#d8b8b7}
+body[data-theme="monochrome"]{--theme-color:#27272a;--theme-soft:#f4f4f5;--theme-hover:#e4e4e7;--theme-canvas:#f4f4f5;--theme-panel:#fff;--theme-panel-soft:#f4f4f5;--theme-border:#c4c4c8}
+body[data-theme]{background-color:var(--theme-canvas)!important;color:#17202b}
+body[data-theme] main,body[data-theme] .bg-surface{background-color:var(--theme-canvas)!important}
+body[data-theme] .bg-surface-container-low,body[data-theme] .bg-surface-container{background-color:var(--theme-panel-soft)!important}
+body[data-theme] .bg-surface-container-lowest{background-color:var(--theme-panel)!important}
+body[data-theme] .bg-primary{background-color:var(--theme-color)!important}
+body[data-theme] .text-primary,body[data-theme] .text-secondary{color:var(--theme-color)!important}
+body[data-theme] .setting-switch[aria-checked="true"]{background:var(--theme-color);border-color:var(--theme-color)}
+
+.category-picker{z-index:1}
+.category-picker:focus-within{z-index:50}
+.category-picker-control{display:flex;min-height:44px;align-items:center;gap:8px;border:1px solid var(--theme-border,#c6c6cd);border-radius:10px;background:var(--theme-panel,#fff);padding:0 8px 0 12px;transition:border-color .15s,box-shadow .15s}
+.category-picker-control:focus-within{border-color:var(--theme-color);box-shadow:0 0 0 2px color-mix(in srgb,var(--theme-color) 18%,transparent)}
+.category-picker-input{min-width:0;flex:1;border:0!important;outline:0!important;background:transparent!important;padding:10px 0!important;color:#17202b!important;font:inherit;font-size:14px;line-height:20px}
+.category-picker-input::placeholder{color:#858c98}
+.category-picker-selected-dot,.category-picker-option-dot{display:none;width:10px;height:10px;flex:none;border:1px solid rgba(23,32,43,.16);border-radius:9999px}
+.category-picker-selected-dot.is-visible{display:block}
+.category-picker-toggle{display:flex;height:32px;width:32px;flex:none;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:var(--theme-color);cursor:pointer}
+.category-picker-toggle:hover{background:var(--theme-soft)}
+.category-picker-menu{position:absolute;top:calc(100% + 6px);right:0;left:0;z-index:80;max-height:220px;overflow-y:auto;border:1px solid var(--theme-border,#c6c6cd);border-radius:14px;background:var(--theme-panel,#fff);padding:6px;box-shadow:0 12px 28px rgba(23,32,43,.16)}
+.category-picker-option{display:flex;width:100%;min-height:40px;align-items:center;gap:9px;border:0;border-radius:9px;background:transparent;padding:8px 10px;color:#253144;text-align:left;font-size:14px;cursor:pointer}
+.category-picker-option:hover,.category-picker-option.is-active,.category-picker-option[aria-selected="true"]{background:var(--theme-soft);color:var(--theme-color)}
+.category-picker-option-dot{display:block}
+.category-picker-option-check{margin-left:auto;color:var(--theme-color);font-size:18px;visibility:hidden}
+.category-picker-option[aria-selected="true"] .category-picker-option-check{visibility:visible}
+.category-picker-empty{padding:12px 10px;color:#6b7280;font-size:13px}
+.record-card-category{position:relative;--record-category-color:#94a3b8}
+.record-card-category::before{position:absolute;inset:0 auto 0 0;width:4px;border-radius:0 4px 4px 0;background:var(--record-category-color);content:""}
+.task-card-actions{position:absolute;top:9px;right:10px;z-index:10}
+.task-card-content{padding-right:112px}
+.mobile-action-label{display:none}
+.task-card-more{display:none;height:34px;width:34px;align-items:center;justify-content:center;border:1px solid transparent;border-radius:9999px;background:var(--theme-panel);color:var(--theme-color);cursor:pointer}
+.task-card-more:hover,.task-card-more:focus-visible{border-color:var(--theme-border);background:var(--theme-soft);outline:none}
+.task-card-action-list{display:flex;gap:2px;opacity:0;transform:translateY(-3px);pointer-events:none;transition:opacity .14s ease,transform .14s ease}
+.task-card-action{display:flex;height:34px;min-width:34px;align-items:center;justify-content:center;gap:4px;border:1px solid var(--theme-border);border-radius:9px;background:var(--theme-panel);padding:0 8px;color:var(--theme-color);font-size:12px;cursor:pointer;box-shadow:0 2px 7px rgba(23,32,43,.08)}
+.task-card-action:hover,.task-card-action:focus-visible{background:var(--theme-soft);outline:2px solid color-mix(in srgb,var(--theme-color) 28%,transparent);outline-offset:1px}
+.task-card-action.is-danger{color:#b42318}
+.task-card-action.is-danger:hover,.task-card-action.is-danger:focus-visible{border-color:#f2b8b5;background:#fff1f0;outline-color:#f2b8b5}
+@media (hover:hover) and (min-width:641px){.record-card-category:focus-within .task-card-action-list,.record-card-category:hover .task-card-action-list{opacity:1;transform:translateY(0);pointer-events:auto}}
+@media (max-width:640px),(hover:none){.task-card-content{padding-right:44px}.mobile-action-label{display:inline}.task-card-more{display:flex}.task-card-action-list{position:absolute;top:40px;right:0;display:flex;flex-direction:column;min-width:142px;border:1px solid var(--theme-border);border-radius:12px;background:var(--theme-panel);padding:5px;box-shadow:0 10px 24px rgba(23,32,43,.16);opacity:0;visibility:hidden;transform:translateY(-3px);pointer-events:none}.task-card-actions.is-open .task-card-action-list{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}.task-card-action{width:100%;justify-content:flex-start;border:0;box-shadow:none}.task-card-action .material-symbols-outlined{font-size:18px}}
+.record-category-badge{display:inline-flex;align-items:center;gap:5px;border-radius:9999px;padding:1px 7px;color:color-mix(in srgb,var(--record-category-color) 78%,#17202b);background:color-mix(in srgb,var(--record-category-color) 12%,var(--theme-panel,#fff));font-weight:500;white-space:nowrap}
+.record-category-dot{width:7px;height:7px;flex:none;border:1px solid rgba(23,32,43,.14);border-radius:9999px;background:var(--record-category-color)}
+
+</style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen">
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-3"><div class="flex items-center gap-space-sm min-w-0"><img alt="온원 ON-ONE 로고" class="h-9 w-14 shrink-0 object-contain" src="onone_header_mark.png"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">온원</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-1">ON-ONE · <span id="headerCurrentView">Today</span></span></div></div><p aria-label="오늘의 한마디" class="daily-encouragement shrink-0"><span class="daily-encouragement-full" id="dailyEncouragement"></span><span class="daily-encouragement-short" id="dailyEncouragementShort"></span></p></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin pb-6 gap-space-xl max-w-xl mx-auto" data-view-panel="today" id="view-today">
+  <!-- Top Header & Guide Section -->
+  <section class="flex flex-col gap-space-sm pt-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Today</h1>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-1">모든 일은 한곳에, 할 일은 하나씩.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-space-sm">
+    <div class="flex items-center justify-between pb-1">
+      <h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">오늘 일정</h2>
+      <button class="theme-action inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 font-label-md text-label-md font-semibold text-on-primary shadow-sm transition-all hover:brightness-90 active:scale-[0.98]" data-open-dialog="schedule-dialog" type="button"><span class="material-symbols-outlined text-[20px]">add</span><span>일정 추가</span></button>
+    </div>
+    <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm" id="scheduleEmptyState"><div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-3"><span class="material-symbols-outlined text-[24px]">calendar_today</span></div><p class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">오늘 등록된 일정이 없습니다</p><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">오늘 일정이 생기면 여기에 표시됩니다.</p></div>
+    <div class="flex flex-col gap-space-sm" id="todayScheduleList"></div>
+  </section>
+
+  <section class="flex flex-col gap-space-sm">
+    <div class="flex items-center justify-between pb-1"><h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">오늘 할 일</h2><button class="theme-action inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 font-label-md text-label-md font-semibold text-on-primary shadow-sm transition-all hover:brightness-90 active:scale-[0.98]" data-open-dialog="task-dialog" type="button"><span class="material-symbols-outlined text-[20px]">add</span><span>할 일 추가</span></button></div>
+    <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm" id="todayTaskEmptyState"><div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-3"><span class="material-symbols-outlined text-[24px]">check_circle</span></div><p class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">오늘 할 일이 없습니다</p><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">오늘 마감이거나 오늘 하기로 계획한 일이 여기에 표시됩니다.</p></div>
+    <div class="flex flex-col gap-space-sm" id="todayTaskList"></div>
+  </section>
+
+  <section class="flex flex-col gap-space-sm">
+    <div class="flex items-center justify-between pb-1"><h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">다가오는 일정</h2><a class="theme-subtle-button inline-flex items-center gap-1 rounded-full px-3 py-1.5 font-label-md text-label-md font-semibold transition-colors" data-view-link="plan" href="#plan">전체 보기<span class="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_forward</span></a></div>
+    <div class="hidden rounded-xl border border-outline-variant/30 bg-surface-container-low px-4 py-3 font-body-sm text-body-sm text-on-surface-variant" id="upcomingScheduleEmpty">예정된 일정이 없습니다.</div>
+    <div class="flex flex-col gap-space-sm" id="upcomingScheduleList"></div>
+  </section>
+
+  <section class="flex flex-col gap-space-sm">
+    <div class="flex items-center justify-between pb-1"><h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">임박한 할 일</h2><a class="theme-subtle-button inline-flex items-center gap-1 rounded-full px-3 py-1.5 font-label-md text-label-md font-semibold transition-colors" data-view-link="tasks" href="#tasks">전체 보기<span class="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_forward</span></a></div>
+    <div class="hidden rounded-xl border border-outline-variant/30 bg-surface-container-low px-4 py-3 font-body-sm text-body-sm text-on-surface-variant" id="urgentTaskEmpty">임박한 미완료 할 일이 없습니다.</div>
+    <div class="flex flex-col gap-space-sm" id="urgentTaskList"></div>
+  </section>
+</div>
+<div class="hidden flex-col w-full px-margin pb-6 gap-space-lg max-w-xl mx-auto" data-view-panel="tasks" id="view-tasks">
+  <section class="flex items-center justify-between gap-3 pt-4"><div class="flex flex-col gap-1"><h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Tasks</h1><p class="font-body-md text-body-md text-on-surface-variant">할 일을 확인하고 관리해보세요.</p></div><button class="theme-action inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-3.5 py-2.5 font-label-md text-on-primary shadow-sm hover:brightness-90" data-open-dialog="task-dialog" type="button"><span class="material-symbols-outlined text-[19px]">add</span>할 일 추가</button></section>
+  <div class="flex flex-wrap gap-2" role="group" aria-label="할 일 필터">
+    <button class="task-filter" data-task-filter="all" aria-pressed="true" type="button">전체</button><button class="task-filter" data-task-filter="today" aria-pressed="false" type="button">오늘</button><button class="task-filter" data-task-filter="upcoming" aria-pressed="false" type="button">예정</button><button class="task-filter" data-task-filter="completed" aria-pressed="false" type="button">완료</button>
+  </div>
+  <section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm" id="taskTabEmptyState"><div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-3"><span class="material-symbols-outlined text-[24px]">check_circle</span></div><p class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1" id="taskTabEmptyTitle">아직 등록된 할 일이 없습니다</p><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs" id="taskTabEmptyCopy">새 할 일을 추가하면 여기에 표시됩니다.</p></section><div class="flex flex-col gap-space-sm" id="taskTabList"></div>
+</div>
+<div class="hidden flex-col w-full px-margin pb-6 gap-space-lg max-w-xl mx-auto" data-view-panel="plan" id="view-plan">
+  <section class="flex flex-col gap-1 pt-4"><h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Plan</h1><p class="font-body-md text-body-md text-on-surface-variant">달력에서 날짜를 선택해 일정을 확인하세요.</p></section>
+  <section class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-4 shadow-sm" aria-label="월간 일정 달력">
+    <div class="mb-3 flex items-center justify-between"><button class="calendar-nav" id="calendarPrevious" type="button" aria-label="이전 달"><span class="material-symbols-outlined">chevron_left</span></button><h2 class="font-headline-sm text-headline-sm font-semibold" id="calendarMonthLabel"></h2><button class="calendar-nav" id="calendarNext" type="button" aria-label="다음 달"><span class="material-symbols-outlined">chevron_right</span></button></div>
+    <div class="mb-1 grid grid-cols-7 text-center text-xs font-semibold text-on-surface-variant"><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span></div>
+    <div class="grid grid-cols-7 gap-1" id="calendarGrid"></div>
+  </section>
+  <section class="flex flex-col gap-space-sm"><div class="flex items-center justify-between gap-3"><h2 class="font-headline-sm text-headline-sm font-semibold" id="selectedDateLabel"></h2><button class="theme-action inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-3.5 py-2.5 font-label-md text-on-primary shadow-sm hover:brightness-90" data-open-dialog="schedule-dialog" data-schedule-date="" id="selectedDateAddSchedule" type="button"><span class="material-symbols-outlined text-[19px]">add</span>일정 추가</button></div>
+    <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm" id="scheduleTabEmptyState"><div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-2"><span class="material-symbols-outlined">event_busy</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">선택한 날짜에 등록된 일정이 없습니다.</p></div><div class="flex flex-col gap-space-sm" id="planScheduleList"></div>
+  </section>
+</div>
+<div class="hidden flex-col w-full px-margin pb-6 gap-space-lg max-w-xl mx-auto" data-view-panel="settings" id="view-settings">
+  <section class="flex flex-col gap-space-sm pt-4"><h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Settings</h1><p class="font-body-md text-body-md text-on-surface-variant">수업, 알림, 테마를 관리하세요.</p></section>
+
+  <section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-5 sm:p-6 shadow-sm">
+    <div class="flex items-start gap-3 mb-5"><div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined">school</span></div><div><h2 class="font-headline-sm text-headline-sm font-semibold">수업/활동 관리</h2><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">일정과 할 일에 사용할 항목을 관리합니다.</p></div></div>
+    <form class="flex flex-col gap-3" id="category-form">
+      <label class="flex flex-col gap-1.5 font-label-md text-label-md">이름<input class="w-full min-w-0 rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" id="category-name" maxlength="60" placeholder="예: 심리학 강의" required></label>
+      <fieldset class="min-w-0"><legend class="mb-2 font-label-md text-label-md">색상 선택</legend><div class="flex flex-wrap gap-2" id="category-palette" aria-label="현재 테마 색상 팔레트"></div></fieldset>
+      <input id="category-selected-color" type="hidden" value="">
+      <div class="flex items-center gap-2"><button class="rounded-lg bg-primary px-4 py-2.5 font-label-md text-on-primary transition-opacity hover:opacity-90" id="category-submit" type="submit">추가</button><button class="hidden rounded-lg border border-outline-variant px-4 py-2.5 font-label-md text-on-surface-variant hover:bg-surface-container-low" id="category-cancel-edit" type="button">수정 취소</button></div>
+    </form>
+    <ul class="mt-4 flex flex-col gap-2" id="category-list" aria-live="polite"></ul>
+    <p class="hidden mt-4 rounded-lg bg-surface-container-low px-3 py-3 font-body-sm text-body-sm text-on-surface-variant" id="category-empty">직접 등록한 수업/활동이 없습니다. 기본 항목 ‘기타’는 계속 사용할 수 있습니다.</p>
+  </section>
+
+  <section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-5 sm:p-6 shadow-sm">
+    <div class="flex items-start gap-3 mb-4"><div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined">notifications</span></div><div><h2 class="font-headline-sm text-headline-sm font-semibold">알림 설정</h2><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">원하는 알림을 켜거나 끌 수 있습니다.</p></div></div>
+    <div class="divide-y divide-outline-variant/30">
+      <div class="flex items-center justify-between gap-4 py-3"><div><p class="font-body-md text-body-md font-medium">마감 하루 전 알림</p><p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">할 일 마감일 하루 전에 알려줍니다.</p></div><button aria-checked="false" class="setting-switch" data-setting-toggle="deadlineReminder" role="switch" type="button" aria-label="마감 하루 전 알림"></button></div>
+      <div class="flex items-center justify-between gap-4 py-3"><div><p class="font-body-md text-body-md font-medium">일정 시작 30분 전 알림</p><p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">일정 시작 전에 알려줍니다.</p></div><button aria-checked="false" class="setting-switch" data-setting-toggle="scheduleReminder" role="switch" type="button" aria-label="일정 시작 30분 전 알림"></button></div>
+    </div>
+  </section>
+
+  <section class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-5 sm:p-6 shadow-sm">
+    <div class="flex items-start gap-3 mb-4"><div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined">palette</span></div><div><h2 class="font-headline-sm text-headline-sm font-semibold">테마</h2><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">미리보기를 확인하고 전체 앱 테마를 선택하세요.</p></div></div>
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2" id="theme-options" role="group" aria-label="테마 선택"></div>
+  </section>
+</div>
+<datalist id="category-options"></datalist>
+
+<dialog class="w-[calc(100%-2rem)] max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-surface p-0 text-on-surface shadow-2xl backdrop:bg-slate-950/40" id="schedule-dialog">
+  <form class="flex flex-col gap-5 p-5 sm:p-6" id="schedule-form">
+    <div><h2 class="font-headline-lg text-headline-lg font-bold" id="scheduleDialogTitle">일정 추가</h2><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">수업이나 활동 일정을 입력하세요.</p></div>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">일정 제목<input class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="title" required maxlength="100" placeholder="예: 심리학 강의"></label>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">날짜<input class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="date" type="date" required></label>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">시간 유형<select class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" id="scheduleTimeType" name="timeType" required><option value="all-day">종일</option><option value="morning">아침</option><option value="lunch">점심</option><option value="afternoon">오후</option><option value="evening">저녁</option><option value="custom">직접 시간 설정</option></select></label>
+    <div class="hidden grid grid-cols-2 gap-3" id="customTimeFields"><label class="flex flex-col gap-1.5 font-label-md text-label-md">시작 시간<input class="min-w-0 rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="startTime" type="time"></label><label class="flex flex-col gap-1.5 font-label-md text-label-md">종료 시간<input class="min-w-0 rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="endTime" type="time"></label></div>
+    <div class="category-picker relative" data-category-picker>
+  <label class="mb-1.5 block font-label-md text-label-md">수업/활동</label>
+  <div class="category-picker-control">
+    <span class="category-picker-selected-dot" aria-hidden="true"></span>
+    <input class="category-picker-input" name="category" type="text" required maxlength="60" placeholder="수업/활동 선택 또는 입력" autocomplete="off" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false">
+    <button class="category-picker-toggle" type="button" aria-label="수업/활동 목록 열기" tabindex="-1"><span class="material-symbols-outlined">expand_more</span></button>
+  </div>
+  <div class="category-picker-menu hidden" role="listbox"></div>
+</div>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">메모 <span class="font-body-sm text-on-surface-variant">(선택)</span><textarea class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="memo" rows="3" maxlength="500" placeholder="추가로 기록할 내용"></textarea></label>
+    <p class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" data-form-error></p>
+    <div class="flex justify-end gap-2 pt-1"><button class="rounded-lg border border-outline-variant px-4 py-2.5 font-label-md" data-close-dialog type="button">취소</button><button class="rounded-lg bg-primary px-4 py-2.5 font-label-md text-on-primary" id="scheduleSaveButton" type="submit">저장</button></div>
+  </form>
+</dialog>
+<dialog class="w-[calc(100%-2rem)] max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-surface p-0 text-on-surface shadow-2xl backdrop:bg-slate-950/40" id="task-dialog">
+  <form class="flex flex-col gap-4 p-5 sm:p-6" id="task-form">
+    <div><h2 class="font-headline-lg text-headline-lg font-bold" id="taskDialogTitle">할 일 추가</h2><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">새로운 할 일의 상세 정보를 입력하세요.</p></div>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">할 일 제목<input class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="title" required maxlength="100" placeholder="예: 보고서 초안 작성"></label>
+    <div class="category-picker relative" data-category-picker>
+  <label class="mb-1.5 block font-label-md text-label-md">수업/활동</label>
+  <div class="category-picker-control">
+    <span class="category-picker-selected-dot" aria-hidden="true"></span>
+    <input class="category-picker-input" name="category" type="text" maxlength="60" placeholder="수업/활동 선택 또는 입력" autocomplete="off" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false">
+    <button class="category-picker-toggle" type="button" aria-label="수업/활동 목록 열기" tabindex="-1"><span class="material-symbols-outlined">expand_more</span></button>
+  </div>
+  <div class="category-picker-menu hidden" role="listbox"></div>
+</div>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">마감 날짜<input class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="dueDate" type="date" required></label>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">메모 <span class="font-body-sm text-on-surface-variant">(선택)</span><textarea class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="memo" rows="3" maxlength="500" placeholder="추가로 기록할 내용"></textarea></label>
+    <p class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" data-form-error></p>
+    <div class="flex flex-wrap items-center justify-end gap-2 pt-1"><button class="hidden mr-auto rounded-lg px-3 py-2 font-label-sm text-secondary hover:bg-surface-container" id="taskEditPlanButton" type="button">실행 계획 추가/수정</button><button class="rounded-lg border border-outline-variant px-4 py-2.5 font-label-md" data-close-dialog type="button">취소</button><button class="rounded-lg bg-primary px-4 py-2.5 font-label-md text-on-primary" id="taskSaveButton" type="submit">저장</button></div>
+  </form>
+</dialog>
+<dialog class="w-[calc(100%-2rem)] max-w-sm rounded-2xl bg-surface p-0 text-on-surface shadow-2xl backdrop:bg-slate-950/40" id="task-plan-prompt">
+  <div class="flex flex-col gap-3 p-5 sm:p-6">
+    <div><h2 class="font-headline-md text-headline-md font-bold">P인간 탈출 프로젝트, 시작해볼까요?</h2><p class="mt-2 font-body-sm text-body-sm text-on-surface-variant">미래의 나에게 모든 걸 떠넘기기 전에 살짝 계획해보자!</p></div>
+    <div class="flex justify-end gap-2 pt-1"><button class="rounded-lg px-4 py-2.5 font-label-md text-on-surface-variant hover:bg-surface-container" id="taskPlanLater" type="button">나중에 할게요</button><button class="rounded-lg bg-primary px-4 py-2.5 font-label-md text-on-primary hover:opacity-90" id="taskPlanNow" type="button">계획 세우기</button></div>
+  </div>
+</dialog>
+<dialog class="w-[calc(100%-2rem)] max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-surface p-0 text-on-surface shadow-2xl backdrop:bg-slate-950/40" id="task-planning-dialog">
+  <form class="flex flex-col gap-4 p-5 sm:p-6" id="task-planning-form">
+    <div><h2 class="font-headline-lg text-headline-lg font-bold">실행 계획</h2><p class="mt-1 font-body-sm text-body-sm text-on-surface-variant" id="taskPlanningTarget"></p></div>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">계획한 날짜<input class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="plannedDate" type="date"></label>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">예상 소요시간 (분)<input class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="duration" type="number" min="1" max="10080" placeholder="예: 60"></label>
+    <div class="grid grid-cols-2 gap-3"><label class="flex flex-col gap-1.5 font-label-md text-label-md">난이도<select class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="difficulty"><option value="">선택 안 함</option><option value="쉬움">쉬움</option><option value="보통">보통</option><option value="어려움">어려움</option></select></label><label class="flex flex-col gap-1.5 font-label-md text-label-md">중요도<select class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="importance"><option value="">선택 안 함</option><option value="낮음">낮음</option><option value="보통">보통</option><option value="높음">높음</option></select></label></div>
+    <label class="flex flex-col gap-1.5 font-label-md text-label-md">마감 시간<input class="rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2.5 font-body-md text-body-md" name="dueTime" type="time"></label>
+    <div class="flex justify-end gap-2 pt-1"><button class="rounded-lg border border-outline-variant px-4 py-2.5 font-label-md" id="taskPlanningCancel" type="button">취소</button><button class="rounded-lg bg-primary px-4 py-2.5 font-label-md text-on-primary" type="submit">계획 저장</button></div>
+  </form>
+</dialog>
+<script>
+  // Interactive Task Completion Toggle
+  document.querySelectorAll('.task-toggle').forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = button.closest('.task-card');
+      const title = card.querySelector('.task-title');
+      const checkIcon = button.querySelector('.check-icon');
+      
+      const isCompleted = button.classList.contains('bg-primary');
+      if (isCompleted) {
+        button.classList.remove('bg-primary', 'text-on-primary');
+        button.classList.add('bg-surface-container-high', 'text-transparent');
+        title.classList.remove('line-through', 'opacity-40');
+      } else {
+        button.classList.add('bg-primary', 'text-on-primary');
+        button.classList.remove('bg-surface-container-high', 'text-transparent');
+        title.classList.add('line-through', 'opacity-40');
+      }
+    });
+  });
+
+  // Filter Chip Micro-interaction
+  document.querySelectorAll('.filter-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip').forEach(c => {
+        c.classList.remove('bg-primary', 'text-on-primary');
+        c.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      chip.classList.add('bg-primary', 'text-on-primary');
+      chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    });
+  });
+
+  // Emergency Re-plan micro feedback
+  const replanBtn = document.getElementById('replanTrigger');
+  if (replanBtn) {
+    replanBtn.addEventListener('click', () => {
+      replanBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> 계산 중...';
+      setTimeout(() => {
+        replanBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span> 재배치 완료!';
+        replanBtn.classList.replace('bg-error', 'bg-secondary');
+      }, 1000);
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.03)]"><div class="flex justify-around items-center h-16 px-space-sm"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm transition-colors text-primary font-semibold" data-view-link="today" href="#today"><span class="material-symbols-outlined text-[24px]">today</span><span class="font-label-sm text-label-sm mt-0.5">Today</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm text-on-surface-variant hover:text-on-surface transition-colors" data-view-link="tasks" href="#tasks"><span class="material-symbols-outlined text-[24px]">checklist</span><span class="font-label-sm text-label-sm mt-0.5">Tasks</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm text-on-surface-variant hover:text-on-surface transition-colors" data-view-link="plan" href="#plan"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm mt-0.5">Plan</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-sm text-on-surface-variant hover:text-on-surface transition-colors" data-view-link="settings" href="#settings"><span class="material-symbols-outlined text-[24px]">settings</span><span class="font-label-sm text-label-sm mt-0.5">Settings</span></a></div></nav>
+<script>
+  const viewLinks = document.querySelectorAll('[data-view-link]');
+  const viewPanels = document.querySelectorAll('[data-view-panel]');
+  const headerCurrentView = document.getElementById('headerCurrentView');
+  const dailyEncouragements = [
+    ['다 할 필요 없어. 하나만 해도 돼.', '하나만 해도 돼.'],
+    ['오늘 할 수 있는 것부터.', '할 수 있는 것부터.'],
+    ['하나 끝내면, 그다음 하나.', '하나 끝내면, 다음 하나.'],
+    ['완벽보다 완료.', '완벽보다 완료.'],
+    ['일단 하나만 시작해보자.', '하나만 시작해보자.'],
+    ['조금 해도, 한 건 한 거야.', '조금 해도 한 거야.'],
+    ['오늘의 한 칸만 채우자.', '오늘 한 칸만 채우자.'],
+    ['할 일 많아도, 하나씩이면 된다.', '하나씩이면 돼.'],
+    ['지금 하나만 끝내자.', '지금 하나만 끝내자.'],
+    ['미래의 나를 조금만 도와주자.', '미래의 나를 돕자.'],
+    ['오늘도 하나 해냈으면 충분해.', '하나 해냈으면 충분해.'],
+    ['시작하면 반은 한 거야.', '시작하면 반이야.'],
+    ['작게 시작해도 괜찮아.', '작게 시작해도 괜찮아.'],
+    ['한 번에 하나면 충분해.', '한 번에 하나면 충분해.'],
+    ['오늘의 나, 꽤 잘하고 있어.', '오늘도 잘하고 있어.']
+  ];
+  const now = new Date();
+  const dayNumber = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+  const dailyMessage = dailyEncouragements[((dayNumber % dailyEncouragements.length) + dailyEncouragements.length) % dailyEncouragements.length];
+  document.getElementById('dailyEncouragement').textContent = dailyMessage[0];
+  document.getElementById('dailyEncouragementShort').textContent = dailyMessage[1];
+
+  function showView(viewName) {
+    const activeView = document.getElementById(`view-${viewName}`) ? viewName : 'today';
+
+    viewPanels.forEach((panel) => {
+      const isActive = panel.dataset.viewPanel === activeView;
+      panel.classList.toggle('hidden', !isActive);
+      panel.classList.toggle('flex', isActive);
+    });
+
+    if (headerCurrentView) {
+      headerCurrentView.textContent = activeView.charAt(0).toUpperCase() + activeView.slice(1);
+    }
+
+    viewLinks.forEach((link) => {
+      const isActive = link.dataset.viewLink === activeView;
+      link.classList.toggle('text-primary', isActive);
+      link.classList.toggle('font-semibold', isActive);
+      link.classList.toggle('text-on-surface-variant', !isActive);
+      if (isActive) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  viewLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const viewName = link.dataset.viewLink;
+      history.replaceState(null, '', `#${viewName}`);
+      showView(viewName);
+    });
+  });
+
+  showView(window.location.hash.slice(1) || 'today');
+</script>
+
+<script>
+  function createRecordId() {
+    if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+    const bytes = new Uint8Array(16);
+    if (globalThis.crypto?.getRandomValues) globalThis.crypto.getRandomValues(bytes);
+    else for (let index = 0; index < bytes.length; index++) bytes[index] = Math.floor(Math.random() * 256);
+    bytes[6] = (bytes[6] & 0x0f) | 0x40; bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = [...bytes].map((value) => value.toString(16).padStart(2, '0')).join('');
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+  }
+  const SCHEDULE_TIME_TYPES = {
+    'all-day': { label: '종일', range: null },
+    morning: { label: '아침', range: null },
+    lunch: { label: '점심', range: null },
+    afternoon: { label: '오후', range: null },
+    evening: { label: '저녁', range: null },
+    custom: { label: '직접 시간 설정', range: null }
+  };
+
+  function loadAppData() {
+    try {
+      const saved = JSON.parse(localStorage.getItem('campusflow-data') || '{}');
+      return saved && typeof saved === 'object' ? saved : {};
+    } catch { return {}; }
+  }
+  const storedAppData = loadAppData();
+  const schedules = Array.isArray(storedAppData.schedules) ? storedAppData.schedules : [];
+  const tasks = Array.isArray(storedAppData.tasks) ? storedAppData.tasks : [];
+  let editingScheduleId = null;
+  let editingTaskId = null;
+  let currentTaskFilter = 'all';
+  let selectedPlanDate = localDateString();
+  let displayedCalendarMonth = new Date();
+  displayedCalendarMonth.setDate(1);
+  const scheduleDialog = document.getElementById('schedule-dialog');
+  const taskDialog = document.getElementById('task-dialog');
+  const scheduleForm = document.getElementById('schedule-form');
+  const scheduleTimeType = document.getElementById('scheduleTimeType');
+  const customTimeFields = document.getElementById('customTimeFields');
+  const taskForm = document.getElementById('task-form');
+
+  function saveAppData() {
+    try {
+      localStorage.setItem('campusflow-data', JSON.stringify({ tasks, schedules }));
+      return true;
+    } catch (error) {
+      console.warn('온원 데이터를 이 브라우저에 저장하지 못했습니다.', error);
+      return false;
+    }
+  }
+
+  document.querySelectorAll('[data-open-dialog]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (button.dataset.openDialog === 'schedule-dialog') openScheduleDialog(null, button.dataset.scheduleDate || selectedPlanDate);
+      else openTaskDialog(null);
+    });
+  });
+  document.querySelectorAll('[data-close-dialog]').forEach((button) => button.addEventListener('click', () => button.closest('dialog').close()));
+  document.querySelectorAll('dialog').forEach((dialog) => dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); }));
+
+  function localDateString(date = new Date()) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  function formattedDate(date) {
+    if (!date) return '';
+    return new Intl.DateTimeFormat('ko-KR', { month: 'long', day: 'numeric', weekday: 'short' }).format(new Date(`${date}T00:00:00`));
+  }
+
+  function addText(parent, tag, className, value) {
+    const element = document.createElement(tag);
+    element.className = className;
+    element.textContent = value;
+    parent.append(element);
+    return element;
+  }
+
+  function formatScheduleTime(item) {
+    const type = SCHEDULE_TIME_TYPES[item.timeType] || SCHEDULE_TIME_TYPES[(item.startTime || item.endTime) ? 'custom' : 'all-day'];
+    if (type.range) return `${type.label} · ${type.range.start}–${type.range.end}`;
+    if (item.timeType === 'custom' || (!item.timeType && (item.startTime || item.endTime))) return `${item.startTime || '시간 미정'}–${item.endTime || '시간 미정'}`;
+    return type.label;
+  }
+
+  function syncScheduleTimeFields() {
+    const isCustom = scheduleTimeType.value === 'custom';
+    customTimeFields.classList.toggle('hidden', !isCustom);
+    scheduleForm.elements.startTime.required = isCustom;
+    scheduleForm.elements.endTime.required = isCustom;
+    if (!isCustom) {
+      scheduleForm.elements.startTime.value = '';
+      scheduleForm.elements.endTime.value = '';
+    }
+  }
+  scheduleTimeType.addEventListener('change', syncScheduleTimeFields);
+
+  function neutralCategoryColor() {
+    const neutralByTheme = { default: '#64748b', dopamine: '#7c8795', vintage: '#8b8174', 'low-contrast': '#78858a', sunset: '#777b8a', monochrome: '#737373' };
+    return neutralByTheme[document.body.dataset.theme] || neutralByTheme.default;
+  }
+  function categoryColorFor(name) {
+    const normalizedName = (name || '기타').trim().toLocaleLowerCase();
+    if (!normalizedName || normalizedName === '기타') return neutralCategoryColor();
+    const category = pickerCategories.find((item) => item.name.toLocaleLowerCase() === normalizedName);
+    return /^#[0-9a-f]{6}$/i.test(category?.color || '') ? category.color : '#64748b';
+  }
+
+  function makeRecordCard(icon, title, details, memo, categoryName = '기타') {
+    const categoryColor = categoryColorFor(categoryName);
+    const card = document.createElement('article');
+    card.className = 'record-card-category bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-4 sm:p-5 shadow-sm';
+    card.style.setProperty('--record-category-color', categoryColor);
+    const heading = document.createElement('div');
+    heading.className = 'flex items-start gap-3';
+    const iconWrap = document.createElement('div');
+    iconWrap.className = 'w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-secondary';
+    const iconEl = document.createElement('span');
+    iconEl.className = 'material-symbols-outlined'; iconEl.textContent = icon; iconWrap.append(iconEl);
+    const content = document.createElement('div'); content.className = 'min-w-0 flex-1';
+    addText(content, 'h3', 'font-headline-sm text-headline-sm font-semibold break-words', title);
+    const detailsLine = document.createElement('p'); detailsLine.className = 'mt-1 flex flex-wrap items-center gap-x-1 font-body-sm text-body-sm text-on-surface-variant';
+    details.forEach((part, index) => {
+      if (index) { const separator = document.createElement('span'); separator.textContent = '·'; separator.setAttribute('aria-hidden', 'true'); detailsLine.append(separator); }
+      if (part && typeof part === 'object' && part.category) {
+        const badge = document.createElement('span'); badge.className = 'record-category-badge';
+        const dot = document.createElement('span'); dot.className = 'record-category-dot'; dot.setAttribute('aria-hidden', 'true');
+        const label = document.createElement('span'); label.textContent = part.category;
+        badge.append(dot, label); detailsLine.append(badge);
+      } else if (part) {
+        const text = document.createElement('span'); text.textContent = part; detailsLine.append(text);
+      }
+    });
+    content.append(detailsLine);
+    if (memo) addText(content, 'p', 'mt-2 font-body-sm text-body-sm text-on-surface whitespace-pre-wrap break-words', memo);
+    heading.append(iconWrap, content); card.append(heading);
+    return card;
+  }
+
+  function makeActionButton(label, action, className = 'rounded-lg px-3 py-1.5 text-sm font-medium text-secondary hover:bg-surface-container') {
+    const button = document.createElement('button'); button.type = 'button'; button.className = className; button.textContent = label;
+    button.addEventListener('click', (event) => { event.stopPropagation(); action(); });
+    return button;
+  }
+
+  let cardActionCounter = 0;
+  function appendCompactCardActions(card, recordTitle, actionsToAdd) {
+    const heading = card.firstElementChild;
+    heading.lastElementChild.classList.add('task-card-content');
+    const actions = document.createElement('div'); actions.className = 'task-card-actions';
+    const more = document.createElement('button'); more.type = 'button'; more.className = 'task-card-more';
+    more.setAttribute('aria-label', `${recordTitle} 메뉴`); more.setAttribute('aria-expanded', 'false');
+    const moreIcon = document.createElement('span'); moreIcon.className = 'material-symbols-outlined'; moreIcon.textContent = 'more_horiz'; more.append(moreIcon);
+    const actionList = document.createElement('div'); actionList.className = 'task-card-action-list'; actionList.id = `card-actions-${++cardActionCounter}`;
+    more.setAttribute('aria-controls', actionList.id);
+    actionsToAdd.forEach(({ icon, label, action, danger = false }) => {
+      const button = document.createElement('button'); button.type = 'button';
+      button.className = `task-card-action${danger ? ' is-danger' : ''}`; button.setAttribute('aria-label', label); button.title = label;
+      const symbol = document.createElement('span'); symbol.className = 'material-symbols-outlined'; symbol.textContent = icon;
+      const text = document.createElement('span'); text.className = 'mobile-action-label'; text.textContent = label;
+      button.append(symbol, text);
+      button.addEventListener('click', (event) => {
+        event.stopPropagation(); actions.classList.remove('is-open'); more.setAttribute('aria-expanded', 'false'); action();
+      });
+      actionList.append(button);
+    });
+    more.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = actions.classList.toggle('is-open');
+      more.setAttribute('aria-expanded', String(isOpen));
+    });
+    actions.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') { actions.classList.remove('is-open'); more.setAttribute('aria-expanded', 'false'); more.focus(); }
+    });
+    document.addEventListener('click', (event) => {
+      if (!actions.contains(event.target)) { actions.classList.remove('is-open'); more.setAttribute('aria-expanded', 'false'); }
+    });
+    actions.append(more, actionList); card.append(actions);
+  }
+
+  function makeTaskCard(item, showActions = true) {
+    const categoryName = item.category || '기타';
+    const details = [item.dueDate ? `마감 ${formattedDate(item.dueDate)}${item.dueTime ? ` ${item.dueTime}` : ''}` : '마감일 미정', { category: categoryName }];
+    if (item.duration) details.push(`${item.duration}분`);
+    if (item.plannedDate) details.push(`계획 ${formattedDate(item.plannedDate)}`);
+    if (item.difficulty) details.push(`난이도 ${item.difficulty}`);
+    if (item.importance) details.push(`중요도 ${item.importance}`);
+    const card = makeRecordCard('task_alt', item.title || '제목 없는 할 일', details, item.memo, categoryName);
+    const heading = card.firstElementChild;
+    const toggle = document.createElement('button'); toggle.type = 'button';
+    toggle.className = `mt-1 h-7 w-7 shrink-0 rounded-full border-2 flex items-center justify-center ${item.completed ? 'bg-primary border-primary text-on-primary' : 'border-outline-variant text-transparent hover:border-primary'}`;
+    toggle.setAttribute('aria-label', item.completed ? `${item.title} 완료 취소` : `${item.title} 완료 표시`);
+    toggle.setAttribute('aria-pressed', String(Boolean(item.completed)));
+    const check = document.createElement('span'); check.className = 'material-symbols-outlined text-[18px]'; check.textContent = 'check'; toggle.append(check);
+    toggle.addEventListener('click', (event) => { event.stopPropagation(); item.completed = !item.completed; saveAppData(); renderTasks(); });
+    heading.prepend(toggle);
+    const title = card.querySelector('h3');
+    title.className = 'cursor-pointer font-headline-sm text-headline-sm font-semibold break-words hover:text-secondary';
+    title.title = '눌러서 수정';
+    title.addEventListener('click', () => openTaskDialog(item));
+    if (showActions) appendCompactCardActions(card, item.title || '할 일', [
+      { icon: 'edit', label: '수정', action: () => openTaskDialog(item) },
+      { icon: 'event_note', label: '계획', action: () => openTaskPlanningDialog(item, true) },
+      { icon: 'delete', label: '삭제', danger: true, action: () => {
+        if (!window.confirm(`“${item.title}” 할 일을 삭제할까요?`)) return;
+        const index = tasks.findIndex((task) => task.id === item.id); if (index >= 0) tasks.splice(index, 1);
+        saveAppData(); renderTasks();
+      } }
+    ]);
+    if (item.completed) card.classList.add('opacity-70');
+    return card;
+  }
+
+  function makeScheduleCard(item, showActions = false) {
+    const categoryName = item.category || '기타';
+    const card = makeRecordCard('event', item.title, [formattedDate(item.date), formatScheduleTime(item), { category: categoryName }], item.memo, categoryName);
+    const title = card.querySelector('h3');
+    title.className = 'cursor-pointer font-headline-sm text-headline-sm font-semibold break-words hover:text-secondary';
+    title.title = '눌러서 수정';
+    title.addEventListener('click', () => openScheduleDialog(item, item.date));
+    if (showActions) appendCompactCardActions(card, item.title || '일정', [
+      { icon: 'edit', label: '수정', action: () => openScheduleDialog(item, item.date) },
+      { icon: 'delete', label: '삭제', danger: true, action: () => {
+        if (!window.confirm(`“${item.title}” 일정을 삭제할까요?`)) return;
+        const index = schedules.findIndex((schedule) => schedule.id === item.id); if (index >= 0) schedules.splice(index, 1);
+        saveAppData(); renderSchedules(); renderCalendar();
+      } }
+    ]);
+    return card;
+  }
+
+  const categoryPickerInstances = [];
+  let pickerCategories = [];
+  try {
+    const settings = JSON.parse(localStorage.getItem('campusflow-settings') || '{}');
+    pickerCategories = Array.isArray(settings.categories) ? settings.categories.filter((item) => item.name?.trim().toLocaleLowerCase() !== '기타') : [];
+  } catch { pickerCategories = []; }
+  function categoryChoices() {
+    return [...pickerCategories.filter((item) => item.name?.trim().toLocaleLowerCase() !== '기타'), { id: 'builtin-other', name: '기타', color: neutralCategoryColor() }];
+  }
+
+  function initializeCategoryPicker(root, index) {
+    const input = root.querySelector('.category-picker-input');
+    const dot = root.querySelector('.category-picker-selected-dot');
+    const toggle = root.querySelector('.category-picker-toggle');
+    const menu = root.querySelector('.category-picker-menu');
+    const listId = `category-picker-list-${index + 1}`;
+    menu.id = listId; input.setAttribute('aria-controls', listId);
+    toggle.setAttribute('aria-controls', listId); toggle.setAttribute('aria-expanded', 'false');
+    let activeIndex = -1;
+    let visibleCategories = [];
+
+    function setOpen(open) {
+      menu.classList.toggle('hidden', !open);
+      input.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) renderOptions();
+    }
+    function syncSelectedDot() {
+      const category = categoryChoices().find((item) => item.name.toLocaleLowerCase() === input.value.trim().toLocaleLowerCase());
+      if (category) {
+        dot.style.backgroundColor = category.color;
+        dot.classList.add('is-visible');
+      } else {
+        dot.style.backgroundColor = '';
+        dot.classList.remove('is-visible');
+      }
+    }
+    function choose(category) {
+      input.value = category.name;
+      syncSelectedDot(); setOpen(false);
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    function renderOptions() {
+      menu.replaceChildren();
+      const query = input.value.trim().toLocaleLowerCase();
+      visibleCategories = categoryChoices().filter((item) => item.name.toLocaleLowerCase().includes(query));
+      activeIndex = -1;
+      if (visibleCategories.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'category-picker-empty';
+        empty.textContent = '일치하는 수업/활동이 없습니다.';
+        menu.append(empty);
+        return;
+      }
+      visibleCategories.forEach((category, optionIndex) => {
+        const option = document.createElement('div');
+        const selected = category.name.toLocaleLowerCase() === input.value.trim().toLocaleLowerCase();
+        option.className = 'category-picker-option';
+        option.setAttribute('role', 'option');
+        option.setAttribute('aria-selected', String(selected));
+        option.tabIndex = -1;
+        const optionDot = document.createElement('span'); optionDot.className = 'category-picker-option-dot'; optionDot.style.backgroundColor = category.color;
+        const label = document.createElement('span'); label.textContent = category.name;
+        const check = document.createElement('span'); check.className = 'category-picker-option-check material-symbols-outlined'; check.textContent = 'check';
+        option.append(optionDot, label, check);
+        option.addEventListener('mousedown', (event) => event.preventDefault());
+        option.addEventListener('click', () => choose(category));
+        option.addEventListener('mouseenter', () => { activeIndex = optionIndex; updateActiveOption(); });
+        menu.append(option);
+      });
+    }
+    function updateActiveOption() {
+      menu.querySelectorAll('[role="option"]').forEach((option, optionIndex) => {
+        option.classList.toggle('is-active', optionIndex === activeIndex);
+        if (optionIndex === activeIndex) option.scrollIntoView({ block: 'nearest' });
+      });
+    }
+
+    input.addEventListener('focus', () => setOpen(true));
+    input.addEventListener('click', () => setOpen(true));
+    input.addEventListener('input', () => { syncSelectedDot(); setOpen(true); });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (menu.classList.contains('hidden')) setOpen(true);
+        if (visibleCategories.length) { activeIndex = Math.min(activeIndex + 1, visibleCategories.length - 1); updateActiveOption(); }
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (visibleCategories.length) { activeIndex = Math.max(activeIndex - 1, 0); updateActiveOption(); }
+      } else if (event.key === 'Enter' && !menu.classList.contains('hidden') && activeIndex >= 0) {
+        event.preventDefault(); choose(visibleCategories[activeIndex]);
+      } else if (event.key === 'Escape') setOpen(false);
+    });
+    toggle.addEventListener('click', () => { const open = menu.classList.contains('hidden'); if (open) input.focus(); setOpen(open); });
+    document.addEventListener('click', (event) => { if (!root.contains(event.target)) setOpen(false); });
+    root.closest('form').addEventListener('reset', () => setTimeout(() => { syncSelectedDot(); setOpen(false); }, 0));
+    syncSelectedDot();
+    categoryPickerInstances.push({ refresh: () => { syncSelectedDot(); if (!menu.classList.contains('hidden')) renderOptions(); } });
+  }
+
+  document.querySelectorAll('[data-category-picker]').forEach(initializeCategoryPicker);
+  window.addEventListener('campusflow-categories-updated', (event) => {
+    pickerCategories = Array.isArray(event.detail) ? event.detail.filter((item) => item.name?.trim().toLocaleLowerCase() !== '기타') : [];
+    categoryPickerInstances.forEach((picker) => picker.refresh());
+    renderTasks(); renderSchedules();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') categoryPickerInstances.forEach((picker) => picker.refresh());
+  });
+
+  function openScheduleDialog(item = null, date = selectedPlanDate) {
+    editingScheduleId = item?.id ?? null;
+    scheduleForm.reset();
+    scheduleForm.querySelector('[data-form-error]').classList.add('hidden');
+    scheduleForm.elements.date.value = item?.date || date || localDateString();
+    scheduleTimeType.value = item?.timeType || ((item?.startTime || item?.endTime) ? 'custom' : 'all-day');
+    if (item) {
+      for (const key of ['title', 'startTime', 'endTime', 'category', 'memo']) scheduleForm.elements[key].value = item[key] || '';
+    }
+    syncScheduleTimeFields();
+    categoryPickerInstances.forEach((picker) => picker.refresh());
+    document.getElementById('scheduleDialogTitle').textContent = item ? '일정 수정' : '일정 추가';
+    document.getElementById('scheduleSaveButton').textContent = item ? '수정 저장' : '저장';
+    scheduleDialog.showModal();
+  }
+
+  const taskPlanningDialog = document.getElementById('task-planning-dialog');
+  const taskPlanningForm = document.getElementById('task-planning-form');
+  let planningTaskId = null;
+  let returnToTaskEditAfterPlanning = false;
+
+  function openTaskPlanningDialog(item, returnToEdit = false) {
+    planningTaskId = item.id;
+    returnToTaskEditAfterPlanning = returnToEdit;
+    taskPlanningForm.reset();
+    for (const key of ['plannedDate', 'duration', 'difficulty', 'importance', 'dueTime']) taskPlanningForm.elements[key].value = item[key] ?? '';
+    document.getElementById('taskPlanningTarget').textContent = item.title;
+    taskPlanningDialog.showModal();
+  }
+
+  document.getElementById('taskEditPlanButton').addEventListener('click', () => {
+    const item = tasks.find((task) => task.id === editingTaskId);
+    if (!item) return;
+    taskDialog.close();
+    openTaskPlanningDialog(item, true);
+  });
+  document.getElementById('taskPlanLater').addEventListener('click', () => document.getElementById('task-plan-prompt').close());
+  document.getElementById('taskPlanNow').addEventListener('click', () => {
+    const task = tasks.find((item) => item.id === planningTaskId);
+    document.getElementById('task-plan-prompt').close();
+    if (task) openTaskPlanningDialog(task);
+  });
+  document.getElementById('taskPlanningCancel').addEventListener('click', () => {
+    taskPlanningDialog.close();
+    if (returnToTaskEditAfterPlanning) {
+      const item = tasks.find((task) => task.id === planningTaskId);
+      if (item) openTaskDialog(item);
+    }
+  });
+  taskPlanningForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const item = tasks.find((task) => task.id === planningTaskId);
+    if (!item) { taskPlanningDialog.close(); return; }
+    const values = Object.fromEntries(new FormData(taskPlanningForm));
+    for (const key of ['plannedDate', 'duration', 'difficulty', 'importance', 'dueTime']) values[key] = values[key] || '';
+    if (values.duration) values.duration = Number(values.duration);
+    Object.assign(item, values);
+    saveAppData(); renderTasks(); taskPlanningDialog.close();
+    if (returnToTaskEditAfterPlanning) openTaskDialog(item);
+  });
+
+  function openTaskDialog(item = null) {
+    editingTaskId = item?.id ?? null;
+    taskForm.reset();
+    taskForm.querySelector('[data-form-error]').classList.add('hidden');
+    if (item) {
+      for (const key of ['title', 'category', 'dueDate', 'memo']) taskForm.elements[key].value = item[key] ?? '';
+    }
+    document.getElementById('taskEditPlanButton').classList.toggle('hidden', !item);
+    categoryPickerInstances.forEach((picker) => picker.refresh());
+    document.getElementById('taskDialogTitle').textContent = item ? '할 일 수정' : '할 일 추가';
+    document.getElementById('taskSaveButton').textContent = item ? '수정 저장' : '저장';
+    taskDialog.showModal();
+  }
+
+  function appendCards(list, items, renderCard) {
+    list.replaceChildren(); items.forEach((item) => list.append(renderCard(item)));
+  }
+
+  function renderSchedules() {
+    const today = localDateString();
+    const sorted = [...schedules].sort((a, b) => `${a.date}T${a.startTime}`.localeCompare(`${b.date}T${b.startTime}`));
+    const todayItems = sorted.filter((item) => item.date === today);
+    const upcomingItems = sorted.filter((item) => item.date > today).slice(0, 3);
+    const planItems = sorted.filter((item) => item.date === selectedPlanDate);
+    appendCards(document.getElementById('todayScheduleList'), todayItems, (item) => makeScheduleCard(item, true));
+    appendCards(document.getElementById('upcomingScheduleList'), upcomingItems, (item) => makeScheduleCard(item));
+    appendCards(document.getElementById('planScheduleList'), planItems, (item) => makeScheduleCard(item, true));
+    document.getElementById('scheduleEmptyState').classList.toggle('hidden', todayItems.length > 0);
+    document.getElementById('upcomingScheduleEmpty').classList.toggle('hidden', upcomingItems.length > 0);
+    document.getElementById('scheduleTabEmptyState').classList.toggle('hidden', planItems.length > 0);
+  }
+
+  function currentFilterTasks() {
+    const today = localDateString();
+    const allSorted = [...tasks].sort((a, b) => `${a.dueDate || '9999-12-31'}T${a.dueTime || '23:59'}`.localeCompare(`${b.dueDate || '9999-12-31'}T${b.dueTime || '23:59'}`));
+    if (currentTaskFilter === 'today') return allSorted.filter((task) => !task.completed && (task.dueDate === today || task.plannedDate === today));
+    if (currentTaskFilter === 'upcoming') return allSorted.filter((task) => !task.completed && (task.dueDate > today || (task.plannedDate && task.plannedDate > today)));
+    if (currentTaskFilter === 'completed') return allSorted.filter((task) => task.completed);
+    return allSorted;
+  }
+
+  function renderTasks() {
+    const today = localDateString();
+    const sorted = [...tasks].sort((a, b) => `${a.dueDate || '9999-12-31'}T${a.dueTime || '23:59'}`.localeCompare(`${b.dueDate || '9999-12-31'}T${b.dueTime || '23:59'}`));
+    const todayItems = sorted.filter((task) => !task.completed && (task.dueDate === today || task.plannedDate === today));
+    const urgentLimit = new Date(); urgentLimit.setDate(urgentLimit.getDate() + 7);
+    const urgentThrough = localDateString(urgentLimit);
+    const urgentItems = sorted.filter((task) => !task.completed && task.dueDate && task.dueDate <= urgentThrough).slice(0, 3);
+    const visibleTasks = currentFilterTasks();
+    appendCards(document.getElementById('todayTaskList'), todayItems, (item) => makeTaskCard(item, false));
+    appendCards(document.getElementById('urgentTaskList'), urgentItems, (item) => makeTaskCard(item, false));
+    appendCards(document.getElementById('taskTabList'), visibleTasks, (item) => makeTaskCard(item, true));
+    document.getElementById('todayTaskEmptyState').classList.toggle('hidden', todayItems.length > 0);
+    document.getElementById('urgentTaskEmpty').classList.toggle('hidden', urgentItems.length > 0);
+    const empty = document.getElementById('taskTabEmptyState');
+    empty.classList.toggle('hidden', visibleTasks.length > 0);
+    const emptyMessages = {
+      all: ['아직 등록된 할 일이 없습니다', '새 할 일을 추가하면 여기에 표시됩니다.'],
+      today: ['오늘 할 일이 없습니다', '오늘 마감이거나 오늘 하기로 계획한 일이 여기에 표시됩니다.'],
+      upcoming: ['예정된 할 일이 없습니다', '앞으로 마감되거나 계획된 할 일이 여기에 표시됩니다.'],
+      completed: ['완료한 할 일이 없습니다', '완료로 표시한 할 일이 여기에 모입니다.']
+    };
+    document.getElementById('taskTabEmptyTitle').textContent = emptyMessages[currentTaskFilter][0];
+    document.getElementById('taskTabEmptyCopy').textContent = emptyMessages[currentTaskFilter][1];
+    document.querySelectorAll('[data-task-filter]').forEach((button) => {
+      const active = button.dataset.taskFilter === currentTaskFilter;
+      button.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  function updateSelectedDateLabel() {
+    document.getElementById('selectedDateLabel').textContent = formattedDate(selectedPlanDate);
+    document.getElementById('selectedDateAddSchedule').dataset.scheduleDate = selectedPlanDate;
+  }
+
+  function selectPlanDate(date, isOutsideDisplayedMonth = false) {
+    selectedPlanDate = date;
+    if (isOutsideDisplayedMonth) {
+      const selected = new Date(`${date}T00:00:00`);
+      displayedCalendarMonth = new Date(selected.getFullYear(), selected.getMonth(), 1);
+      renderCalendar();
+    } else {
+      document.querySelectorAll('.calendar-day').forEach((dayButton) => {
+        const selected = dayButton.dataset.date === selectedPlanDate;
+        dayButton.classList.toggle('calendar-day-selected', selected);
+        dayButton.setAttribute('aria-pressed', String(selected));
+      });
+      updateSelectedDateLabel();
+    }
+    renderSchedules();
+  }
+
+  function renderCalendar() {
+    const year = displayedCalendarMonth.getFullYear(); const month = displayedCalendarMonth.getMonth();
+    document.getElementById('calendarMonthLabel').textContent = new Intl.DateTimeFormat('ko-KR', { year: 'numeric', month: 'long' }).format(displayedCalendarMonth);
+    updateSelectedDateLabel();
+    const grid = document.getElementById('calendarGrid'); grid.replaceChildren();
+    const first = new Date(year, month, 1); const mondayOffset = (first.getDay() + 6) % 7;
+    const gridStart = new Date(year, month, 1 - mondayOffset);
+    const today = localDateString();
+    for (let index = 0; index < 42; index += 1) {
+      const day = new Date(gridStart); day.setDate(gridStart.getDate() + index);
+      const date = localDateString(day);
+      const dayEvents = schedules.filter((item) => item.date === date);
+      const button = document.createElement('button'); button.type = 'button';
+      button.className = `calendar-day ${day.getMonth() !== month ? 'calendar-day-muted' : ''} ${date === selectedPlanDate ? 'calendar-day-selected' : ''} ${date === today ? 'calendar-day-today' : ''}`;
+      button.setAttribute('aria-label', `${formattedDate(date)}${dayEvents.length ? `, 일정 ${dayEvents.length}개` : ''}`);
+      button.dataset.date = date;
+      button.setAttribute('aria-pressed', String(date === selectedPlanDate));
+      const number = document.createElement('span'); number.className = 'calendar-day-number'; number.textContent = String(day.getDate()); button.append(number);
+      if (dayEvents.length) { const dot = document.createElement('span'); dot.className = 'calendar-event-dot'; dot.setAttribute('aria-hidden', 'true'); button.append(dot); }
+      button.addEventListener('click', () => selectPlanDate(date, day.getMonth() !== month));
+      grid.append(button);
+    }
+  }
+
+  document.querySelectorAll('[data-task-filter]').forEach((button) => button.addEventListener('click', () => {
+    currentTaskFilter = button.dataset.taskFilter; renderTasks();
+  }));
+  document.getElementById('calendarPrevious').addEventListener('click', () => {
+    displayedCalendarMonth = new Date(displayedCalendarMonth.getFullYear(), displayedCalendarMonth.getMonth() - 1, 1);
+    selectedPlanDate = localDateString(displayedCalendarMonth); renderCalendar(); renderSchedules();
+  });
+  document.getElementById('calendarNext').addEventListener('click', () => {
+    displayedCalendarMonth = new Date(displayedCalendarMonth.getFullYear(), displayedCalendarMonth.getMonth() + 1, 1);
+    selectedPlanDate = localDateString(displayedCalendarMonth); renderCalendar(); renderSchedules();
+  });
+
+  scheduleForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const values = Object.fromEntries(new FormData(scheduleForm));
+    if (values.timeType === 'custom' && values.endTime <= values.startTime) { setFormError(scheduleForm, '종료 시간은 시작 시간보다 늦어야 합니다.'); return; }
+    if (values.timeType !== 'custom') { values.startTime = ''; values.endTime = ''; }
+    if (editingScheduleId) {
+      const existing = schedules.find((item) => item.id === editingScheduleId);
+      if (existing) Object.assign(existing, values);
+    } else schedules.push({ ...values, id: createRecordId() });
+    selectedPlanDate = values.date; displayedCalendarMonth = new Date(`${values.date}T00:00:00`); displayedCalendarMonth.setDate(1);
+    saveAppData(); renderCalendar(); renderSchedules(); scheduleDialog.close();
+  });
+
+  taskForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const values = Object.fromEntries(new FormData(taskForm));
+    // Keep optional planning values as predictable empty strings instead of null/undefined.
+    for (const key of ['category', 'memo']) values[key] = values[key] || '';
+    let createdTask = null;
+    if (editingTaskId) {
+      const existing = tasks.find((item) => item.id === editingTaskId);
+      if (existing) Object.assign(existing, values);
+    } else {
+      createdTask = { ...values, dueTime: '', plannedDate: '', duration: '', difficulty: '', importance: '', id: createRecordId(), completed: false };
+      tasks.push(createdTask);
+    }
+    const saved = await saveAppData();
+    renderTasks(); taskDialog.close();
+    if (createdTask && saved) {
+      planningTaskId = createdTask.id;
+      document.getElementById('task-plan-prompt').showModal();
+    }
+  });
+
+  function setFormError(form, message) {
+    const error = form.querySelector('[data-form-error]'); error.textContent = message; error.classList.remove('hidden');
+  }
+
+  renderSchedules(); renderTasks(); renderCalendar();
+</script>
+
+<script>
+  const settingsStorageKey = 'campusflow-settings';
+  const THEME_CONFIGS = {
+    default: { label: '기본', palette: ['#2563eb', '#16a34a', '#ea580c', '#7c3aed', '#dc2626', '#0d9488', '#ca8a04', '#db2777'] },
+    dopamine: { label: '도파민', palette: ['#72d6c3', '#f18fb4', '#9b86df', '#61b4e8', '#e8c84a', '#f39a68', '#e65d7a', '#c2a3e8'] },
+    vintage: { label: '빈티지', palette: ['#596b3f', '#762f3f', '#795548', '#27445d', '#b58a23', '#b65338', '#2e7770', '#c2aa7b'] },
+    'low-contrast': { label: '저대비 미감', palette: ['#758c7b', '#71869b', '#987b91', '#b2877c', '#6b9b91', '#586f91', '#b86f58', '#80678f'] },
+    sunset: { label: '노을', palette: ['#e85d5d', '#f08a75', '#b5523c', '#ae6d9d', '#79638f', '#304f7d', '#c74776', '#607f91'] },
+    monochrome: { label: '흑백', palette: ['#000000', '#333333', '#555555', '#888888', '#b6b6b6', '#526879', '#897f75', '#f1ebdd'] }
+  };
+  const validThemes = Object.keys(THEME_CONFIGS);
+  function readSettings() {
+    try {
+      const value = JSON.parse(localStorage.getItem(settingsStorageKey) || '{}');
+      return value && typeof value === 'object' ? value : {};
+    } catch { return {}; }
+  }
+  let appSettings = { categories: [], deadlineReminder: false, scheduleReminder: false, theme: 'default', ...readSettings() };
+  if (!Array.isArray(appSettings.categories)) appSettings.categories = [];
+  let selectedCategoryColor = '';
+  let editingCategoryId = null;
+  const categoryForm = document.getElementById('category-form');
+  const categoryNameInput = document.getElementById('category-name');
+  const categoryPalette = document.getElementById('category-palette');
+  const categorySelectedColor = document.getElementById('category-selected-color');
+  const categoryList = document.getElementById('category-list');
+  const categoryEmpty = document.getElementById('category-empty');
+  const categorySubmit = document.getElementById('category-submit');
+  const categoryCancelEdit = document.getElementById('category-cancel-edit');
+  const themeOptions = document.getElementById('theme-options');
+
+  function saveSettings() {
+    try { localStorage.setItem(settingsStorageKey, JSON.stringify(appSettings)); }
+    catch (error) { console.warn('설정을 이 브라우저에 저장하지 못했습니다.', error); }
+  }
+  function closestPaletteIndex(color, palette) {
+    const rgb = (hex) => hex.match(/[a-f0-9]{2}/gi).map((part) => parseInt(part, 16));
+    const target = rgb(color);
+    return palette.reduce((best, candidate, index) => {
+      const distance = rgb(candidate).reduce((sum, value, channel) => sum + (value - target[channel]) ** 2, 0);
+      return distance < best.distance ? { index, distance } : best;
+    }, { index: 0, distance: Infinity }).index;
+  }
+  function renderPalette(selected = selectedCategoryColor) {
+    categoryPalette.replaceChildren();
+    THEME_CONFIGS[appSettings.theme].palette.forEach((color, index) => {
+      const button = document.createElement('button');
+      button.type = 'button'; button.className = 'category-swatch'; button.style.backgroundColor = color;
+      button.setAttribute('aria-label', `색상 ${index + 1}`);
+      button.setAttribute('aria-pressed', String(color.toLowerCase() === String(selected).toLowerCase()));
+      button.title = color;
+      button.addEventListener('click', () => {
+        selectedCategoryColor = color; categorySelectedColor.value = color; renderPalette(color);
+      });
+      categoryPalette.append(button);
+    });
+  }
+  function renderCategoryOptions() {
+    const list = document.getElementById('category-options'); list.replaceChildren();
+    appSettings.categories.filter((category) => category.name?.trim().toLocaleLowerCase() !== '기타').forEach((category) => { const option = document.createElement('option'); option.value = category.name; list.append(option); });
+  }
+  function cancelCategoryEdit() {
+    editingCategoryId = null; categoryForm.reset(); categorySubmit.textContent = '추가';
+    categoryCancelEdit.classList.add('hidden');
+    selectedCategoryColor = THEME_CONFIGS[appSettings.theme].palette[0];
+    categorySelectedColor.value = selectedCategoryColor; renderPalette(selectedCategoryColor);
+  }
+  function renderCategories() {
+    const userCategories = appSettings.categories.filter((category) => category.name?.trim().toLocaleLowerCase() !== '기타');
+    categoryList.replaceChildren(); categoryEmpty.classList.toggle('hidden', userCategories.length > 0);
+    userCategories.forEach((category) => {
+      const row = document.createElement('li'); row.className = 'flex items-center gap-3 rounded-lg border border-outline-variant/30 bg-surface px-3 py-2.5';
+      const dot = document.createElement('span'); dot.className = 'h-4 w-4 shrink-0 rounded-full border border-black/10'; dot.style.backgroundColor = category.color;
+      const label = document.createElement('span'); label.className = 'min-w-0 flex-1 truncate font-body-md text-body-md font-medium'; label.textContent = category.name;
+      const edit = document.createElement('button'); edit.type = 'button'; edit.className = 'rounded-md px-2 py-1 text-sm text-secondary hover:bg-surface-container'; edit.textContent = '수정';
+      edit.addEventListener('click', () => {
+        editingCategoryId = category.id; categoryNameInput.value = category.name; selectedCategoryColor = category.color;
+        categorySelectedColor.value = category.color; categorySubmit.textContent = '저장'; categoryCancelEdit.classList.remove('hidden');
+        renderPalette(category.color); categoryNameInput.focus();
+      });
+      const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'rounded-md px-2 py-1 text-sm text-on-surface-variant hover:bg-surface-container'; remove.textContent = '삭제';
+      remove.setAttribute('aria-label', `${category.name} 삭제`);
+      remove.addEventListener('click', () => {
+        appSettings.categories = appSettings.categories.filter((item) => item.id !== category.id);
+        if (editingCategoryId === category.id) cancelCategoryEdit();
+        saveSettings(); renderCategories(); renderCategoryOptions();
+      });
+      row.append(dot, label, edit, remove); categoryList.append(row);
+    });
+    const neutralByTheme = { default: '#64748b', dopamine: '#7c8795', vintage: '#8b8174', 'low-contrast': '#78858a', sunset: '#777b8a', monochrome: '#737373' };
+    const otherRow = document.createElement('li'); otherRow.className = 'flex items-center gap-3 rounded-lg border border-outline-variant/30 bg-surface px-3 py-2.5';
+    const otherDot = document.createElement('span'); otherDot.className = 'h-4 w-4 shrink-0 rounded-full border border-black/10'; otherDot.style.backgroundColor = neutralByTheme[appSettings.theme] || neutralByTheme.default;
+    const otherLabel = document.createElement('span'); otherLabel.className = 'min-w-0 flex-1 font-body-md text-body-md font-medium'; otherLabel.textContent = '기타';
+    const builtInTag = document.createElement('span'); builtInTag.className = 'rounded-full bg-surface-container px-2 py-1 font-label-sm text-label-sm text-on-surface-variant'; builtInTag.textContent = '기본 항목';
+    otherRow.append(otherDot, otherLabel, builtInTag); categoryList.append(otherRow);
+    window.dispatchEvent(new CustomEvent('campusflow-categories-updated', { detail: appSettings.categories }));
+  }
+  categoryForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const name = categoryNameInput.value.trim(); if (!name || !selectedCategoryColor) return;
+    if (name.toLocaleLowerCase() === '기타') { categoryNameInput.setCustomValidity('“기타”는 항상 제공되는 기본 항목입니다.'); categoryNameInput.reportValidity(); return; }
+    const duplicate = appSettings.categories.some((item) => item.name.toLocaleLowerCase() === name.toLocaleLowerCase() && item.id !== editingCategoryId);
+    if (duplicate) { categoryNameInput.setCustomValidity('이미 등록된 이름입니다.'); categoryNameInput.reportValidity(); return; }
+    if (editingCategoryId) {
+      const item = appSettings.categories.find((entry) => entry.id === editingCategoryId);
+      if (item) Object.assign(item, { name, color: selectedCategoryColor });
+    } else appSettings.categories.push({ id: createRecordId(), name, color: selectedCategoryColor });
+    categoryNameInput.setCustomValidity(''); saveSettings(); cancelCategoryEdit(); renderCategories(); renderCategoryOptions();
+  });
+  categoryNameInput.addEventListener('input', () => categoryNameInput.setCustomValidity(''));
+  categoryCancelEdit.addEventListener('click', cancelCategoryEdit);
+
+  function applyTheme(theme) {
+    appSettings.theme = validThemes.includes(theme) ? theme : 'default';
+    document.body.dataset.theme = appSettings.theme;
+  }
+  function renderThemeOptions() {
+    themeOptions.replaceChildren();
+    validThemes.forEach((theme) => {
+      const button = document.createElement('button'); button.type = 'button'; button.className = 'theme-choice';
+      button.setAttribute('aria-pressed', String(theme === appSettings.theme));
+      const name = document.createElement('span'); name.textContent = THEME_CONFIGS[theme].label;
+      const preview = document.createElement('span'); preview.className = 'theme-preview'; preview.setAttribute('aria-hidden', 'true');
+      THEME_CONFIGS[theme].palette.forEach((color) => { const dot = document.createElement('span'); dot.className = 'theme-preview-dot'; dot.style.backgroundColor = color; preview.append(dot); });
+      button.append(name, preview);
+      button.addEventListener('click', () => {
+        const previous = THEME_CONFIGS[appSettings.theme].palette; const next = THEME_CONFIGS[theme].palette;
+        appSettings.categories.forEach((category) => { category.color = next[closestPaletteIndex(category.color, previous)]; });
+        if (selectedCategoryColor) selectedCategoryColor = next[closestPaletteIndex(selectedCategoryColor, previous)];
+        applyTheme(theme); renderThemeOptions(); renderPalette(selectedCategoryColor || next[0]); renderCategories(); saveSettings();
+      });
+      themeOptions.append(button);
+    });
+  }
+  document.querySelectorAll('[data-setting-toggle]').forEach((toggle) => {
+    const key = toggle.dataset.settingToggle; toggle.setAttribute('aria-checked', String(Boolean(appSettings[key])));
+    toggle.addEventListener('click', () => { appSettings[key] = toggle.getAttribute('aria-checked') !== 'true'; toggle.setAttribute('aria-checked', String(appSettings[key])); saveSettings(); });
+  });
+
+  const oldThemeNames = { blue: 'default', purple: 'dopamine', green: 'low-contrast' };
+  appSettings.theme = oldThemeNames[appSettings.theme] || appSettings.theme;
+  if (!validThemes.includes(appSettings.theme)) appSettings.theme = 'default';
+  const activePalette = THEME_CONFIGS[appSettings.theme].palette;
+  appSettings.categories.forEach((category) => {
+    const color = /^#[0-9a-f]{6}$/i.test(category.color || '') ? category.color : activePalette[0];
+    if (!activePalette.some((candidate) => candidate.toLowerCase() === color.toLowerCase())) category.color = activePalette[closestPaletteIndex(color, activePalette)];
+  });
+  applyTheme(appSettings.theme);
+  selectedCategoryColor = activePalette[0]; categorySelectedColor.value = selectedCategoryColor;
+  renderThemeOptions(); renderPalette(selectedCategoryColor); renderCategories(); renderCategoryOptions(); saveSettings();
+</script>
+
+</body></html>
