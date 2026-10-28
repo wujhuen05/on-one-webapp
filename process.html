@@ -5,36 +5,56 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>온원(ON-ONE) | AI 활용 및 개발 과정</title>
 <style>
-:root{--navy:#17243a;--blue:#2f5f9f;--soft:#edf3fb;--paper:#fff;--bg:#f5f7fa;--line:#dfe5ed;--muted:#667085;}
+:root{
+  --ink:#34343b;
+  --blue:#627e91;
+  --soft:#e9f4ef;
+  --paper:#fffefa;
+  --bg:#f8f6f0;
+  --line:#e8e4dc;
+  --muted:#73747c;
+  --mint:#dff2e9;
+  --pink:#f8e5ec;
+  --lavender:#eee9f8;
+  --sky:#e4f1f8;
+  --lemon:#f6f1d8;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR","Segoe UI",sans-serif;background:var(--bg);color:var(--navy);line-height:1.7}
-.hero{background:linear-gradient(135deg,#183966,#315f9b);color:white;padding:62px 24px 52px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR","Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+.hero{background:linear-gradient(115deg,#cceee2 0%,#e7e0f7 34%,#f7e1e9 67%,#dceefa 100%);color:#353b46;padding:62px 24px 52px;box-shadow:0 8px 28px rgba(116,129,146,.08)}
 .wrap{max-width:1180px;margin:auto}
-.hero .small{font-size:13px;font-weight:800;letter-spacing:.14em;opacity:.75}
-.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.18;margin:12px 0 14px}
-.hero p{max-width:780px;margin:0;color:rgba(255,255,255,.88);font-size:17px}
+.hero .small{font-size:13px;font-weight:800;letter-spacing:.14em;color:#667477;opacity:.9}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.18;margin:12px 0 14px;color:#343943}
+.hero p{max-width:780px;margin:0;color:#5d6570;font-size:17px}
 main{padding:30px 20px 70px}
-.intro{background:white;border:1px solid var(--line);border-radius:18px;padding:24px 28px;margin-bottom:22px}
+.intro{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px 28px;margin-bottom:22px;box-shadow:0 4px 16px rgba(76,73,61,.035)}
 .intro h2{margin:0 0 8px;font-size:22px}
-.intro p{margin:0;color:#465266}
-.toc{background:white;border:1px solid var(--line);border-radius:18px;padding:22px 28px;margin-bottom:26px}
+.intro p{margin:0;color:#62636b}
+.toc{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px 28px;margin-bottom:26px;box-shadow:0 4px 16px rgba(76,73,61,.035)}
 .toc h2{font-size:18px;margin:0 0 10px}
 .toc ol{columns:2;margin:0;padding-left:22px}
-.toc a{color:#315d92;text-decoration:none}
-.pair{background:white;border:1px solid var(--line);border-radius:20px;margin-bottom:18px;overflow:hidden;box-shadow:0 5px 18px rgba(17,35,60,.04)}
-.pair-head{display:flex;gap:14px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line)}
-.pair-head span{width:34px;height:34px;border-radius:50%;background:var(--soft);color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:12px}
+.toc li{padding:2px 0;color:#777781}
+.toc a{color:#587f79;text-decoration:none;text-underline-offset:3px}
+.toc a:hover{text-decoration:underline}
+.pair{--case-accent:#68a994;--case-soft:var(--mint);--goal-bg:#f3faf6;--prompt-bg:#f7f4fb;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--case-accent);border-radius:20px;margin-bottom:18px;overflow:hidden;box-shadow:0 5px 18px rgba(75,74,69,.045)}
+.pair:nth-of-type(5n + 2){--case-accent:#c987a0;--case-soft:var(--pink);--goal-bg:#fff6f8;--prompt-bg:#f5f7fc}
+.pair:nth-of-type(5n + 3){--case-accent:#9180bd;--case-soft:var(--lavender);--goal-bg:#f8f6fc;--prompt-bg:#f2f8f8}
+.pair:nth-of-type(5n + 4){--case-accent:#6e9eb8;--case-soft:var(--sky);--goal-bg:#f2f8fb;--prompt-bg:#f8f7f1}
+.pair:nth-of-type(5n){--case-accent:#b3a35a;--case-soft:var(--lemon);--goal-bg:#fbfaef;--prompt-bg:#f6f5fb}
+.pair-head{display:flex;gap:14px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--case-soft) 36%,var(--paper))}
+.pair-head span{width:34px;height:34px;border-radius:50%;background:var(--case-soft);color:var(--case-accent);display:grid;place-items:center;font-weight:800;font-size:12px}
 .pair-head h3{margin:0;font-size:20px}
 .columns{display:grid;grid-template-columns:.9fr 1.1fr}
 .columns section{padding:22px 24px}
-.goal{border-right:1px solid var(--line);background:#fbfcfe}
-.label{font-weight:800;font-size:13px;color:var(--blue);margin-bottom:9px}
-.goal p{margin:0;color:#39465a}
-.prompt pre{margin:0;white-space:pre-wrap;word-break:keep-all;font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#f7f8fa;border:1px solid #e7eaf0;border-radius:12px;padding:16px;color:#263447}
-.note{margin-top:28px;background:#eef6f2;border-left:5px solid #3c7b5d;border-radius:0 14px 14px 0;padding:20px 24px;color:#355244}
-footer{text-align:center;color:#7b8797;font-size:13px;padding:0 20px 42px}
+.goal{border-right:1px solid var(--line);background:var(--goal-bg)}
+.prompt{background:var(--prompt-bg)}
+.label{font-weight:800;font-size:13px;color:var(--case-accent);margin-bottom:9px}
+.goal p{margin:0;color:#50515a}
+.prompt pre{margin:0;white-space:pre-wrap;word-break:keep-all;font:14px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:rgba(255,255,255,.78);border:1px solid color-mix(in srgb,var(--case-accent) 17%,white);border-radius:13px;padding:16px;color:#454650}
+.note{margin-top:28px;background:#eaf5ef;border-left:5px solid #77aa98;border-radius:0 16px 16px 0;padding:20px 24px;color:#465d56}
+footer{text-align:center;color:#85858b;font-size:13px;padding:0 20px 42px}
 @media(max-width:760px){.columns{grid-template-columns:1fr}.goal{border-right:0;border-bottom:1px solid var(--line)}.toc ol{columns:1}main{padding:20px 12px 56px}.hero{padding:48px 18px 40px}}
-@media print{body{background:#fff}.hero{background:#fff;color:#000;padding:16px 0}.hero p,.hero .small{color:#444}main{padding:0}.toc{display:none}.pair{box-shadow:none;break-inside:avoid}}
+@media print{body{background:#fff}.hero{background:#fff;color:#000;padding:16px 0;box-shadow:none}.hero p,.hero .small{color:#444}main{padding:0}.toc{display:none}.pair{box-shadow:none;break-inside:avoid}}
 </style>
 </head>
 <body>
